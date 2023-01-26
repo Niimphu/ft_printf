@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:30:01 by yiwong            #+#    #+#             */
-/*   Updated: 2023/01/26 19:17:02 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/01/26 19:36:08 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_printf_s(char *s)
 	return (r);
 }
 
-int    ft_printf_base(unsigned int u, int len, char *set, int base)
+int    ft_printf_base(unsigned int long long u, int len, char *set, int base)
 {
     if (u == 0)
         return len;
@@ -48,18 +48,18 @@ int	ft_printf_fmt(const char fmt, va_list *args)
 	if (fmt == 's')
 		return (ft_printf_s(va_arg(*args, char *)));
 	if (fmt == 'p')
-		return (ft_printf_s("0x") + ft_printf_base((unsigned int)va_arg(*args, void *),
-		0, "0123456789ABCDEF", 16));
+		return (ft_printf_s("0x") + ft_printf_base(va_arg(*args,
+			unsigned int long long), 0, "0123456789abcdef", 16));
 	if (fmt == 'd' || fmt == 'i')
 		return (ft_printf_s(ft_itoa(va_arg(*args, int))));
 	if (fmt == 'u')
-		return (ft_printf_base((unsigned int)va_arg(*args, unsigned int),
+		return (ft_printf_base(va_arg(*args, unsigned int long long),
 			0, "0123456789", 10));
 	if (fmt == 'x')
-		return (ft_printf_base(va_arg(*args, unsigned int),
+		return (ft_printf_base(va_arg(*args, unsigned int long long),
 			0, "0123456789abcdef", 16));
 	if (fmt == 'X')
-		return (ft_printf_base(va_arg(*args, unsigned int),
+		return (ft_printf_base(va_arg(*args, unsigned int long long),
 			0, "0123456789ABCDEF", 16));
 	ft_putchar_fd('%', 1);
 	return (1);
@@ -100,5 +100,6 @@ int	main(void)
 
 	ft_printf("My test prints\ncharacter: %c\nstring: %s\npointer: %p\nint: %i\nunsigned int: %u\nlowerhex: %x\nupperhex: %X\npercent sign: %%\n\n", c, s, s, n, u, x, x);
 	printf("Standard prints\ncharacter: %c\nstring: %s\npointer: %p\nint: %i\nunsigned int: %u\nlowerhex: %x\nupperhex: %X\npercent sign: %%\n\n", c, s, s, n, u, x, x);
+
 	return (0);
 }
