@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:30:01 by yiwong            #+#    #+#             */
-/*   Updated: 2023/01/26 19:36:08 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/01/26 19:46:58 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ int	ft_printf_fmt(const char fmt, va_list *args)
 	if (fmt == 'd' || fmt == 'i')
 		return (ft_printf_s(ft_itoa(va_arg(*args, int))));
 	if (fmt == 'u')
-		return (ft_printf_base(va_arg(*args, unsigned int long long),
+		return (ft_printf_base(va_arg(*args, unsigned int),
 			0, "0123456789", 10));
 	if (fmt == 'x')
-		return (ft_printf_base(va_arg(*args, unsigned int long long),
+		return (ft_printf_base(va_arg(*args, unsigned int),
 			0, "0123456789abcdef", 16));
 	if (fmt == 'X')
 		return (ft_printf_base(va_arg(*args, unsigned int long long),
@@ -84,22 +84,22 @@ int	ft_printf(const char *str, ...)
 	return (len);
 }
 
-int	main(void)
-{
-	int 			n;
-	char 			c;
-	char			*s;
-	unsigned int	u;
-	unsigned int	x;
+// int	main(void)
+// {
+// 	int 			n;
+// 	char 			c;
+// 	char			*s;
+// 	unsigned int	u;
+// 	unsigned int	x;
 
-	c = 'c';
-	n = -2147483648;
-	s = "Hello World. )OIWEFRUWISUHRGKLBSKUNCGFILUWERGjfldkuhgq3p894tgjrpur3pw84ugf. Yes.";
-	u = 4294967295;
-	x = 4294967295;
+// 	c = 'c';
+// 	n = -2147483648;
+// 	s = "Hello World. )OIWEFRUWISUHRGKLBSKUNCGFILUWERGjfldkuhgq3p894tgjrpur3pw84ugf. Yes.";
+// 	u = 4294967295;
+// 	x = 4294967295;
 
-	ft_printf("My test prints\ncharacter: %c\nstring: %s\npointer: %p\nint: %i\nunsigned int: %u\nlowerhex: %x\nupperhex: %X\npercent sign: %%\n\n", c, s, s, n, u, x, x);
-	printf("Standard prints\ncharacter: %c\nstring: %s\npointer: %p\nint: %i\nunsigned int: %u\nlowerhex: %x\nupperhex: %X\npercent sign: %%\n\n", c, s, s, n, u, x, x);
+// 	ft_printf("My test prints\ncharacter: %c\nstring: %s\npointer: %p\nint: %i\nunsigned int: %u\nlowerhex: %x\nupperhex: %X\npercent sign: %%\n\n", c, s, s, n, u, x, x);
+// 	printf("Standard prints\ncharacter: %c\nstring: %s\npointer: %p\nint: %i\nunsigned int: %u\nlowerhex: %x\nupperhex: %X\npercent sign: %%\n\n", c, s, s, n, u, x, x);
 
-	return (0);
-}
+// 	return (0);
+// }
