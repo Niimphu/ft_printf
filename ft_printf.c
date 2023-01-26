@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:30:01 by yiwong            #+#    #+#             */
-/*   Updated: 2023/01/26 19:46:58 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/01/26 19:51:38 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ int	ft_printf(const char *str, ...)
 // 	char			*s;
 // 	unsigned int	u;
 // 	unsigned int	x;
+// 	int				r1;
+// 	int				r2;
 
 // 	c = 'c';
 // 	n = -2147483648;
@@ -98,8 +100,8 @@ int	ft_printf(const char *str, ...)
 // 	u = 4294967295;
 // 	x = 4294967295;
 
-// 	ft_printf("My test prints\ncharacter: %c\nstring: %s\npointer: %p\nint: %i\nunsigned int: %u\nlowerhex: %x\nupperhex: %X\npercent sign: %%\n\n", c, s, s, n, u, x, x);
-// 	printf("Standard prints\ncharacter: %c\nstring: %s\npointer: %p\nint: %i\nunsigned int: %u\nlowerhex: %x\nupperhex: %X\npercent sign: %%\n\n", c, s, s, n, u, x, x);
-
+// 	r1 = ft_printf("My test prints\ncharacter: %c\nstring: %s\npointer: %p\nint: %i\nunsigned int: %u\nlowerhex: %x\nupperhex: %X\npercent sign: %%\n\n", c, s, s, n, u, x, x);
+// 	r2 = printf("Standard prints\ncharacter: %c\nstring: %s\npointer: %p\nint: %i\nunsigned int: %u\nlowerhex: %x\nupperhex: %X\npercent sign: %%\n\n", c, s, s, n, u, x, x);
+// 	printf("%i, %i", r1, r2);
 // 	return (0);
 // }
