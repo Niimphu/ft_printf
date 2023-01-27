@@ -22,13 +22,23 @@ SRC = 	ft_printf.c
 
 OBJ = $(SRC:.c=.o)
 
-LIBFT_MAKE = ./libft_copy/Makefile
-
 NAME = libftprint.a
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-		cd libft_copy && $(LIBFT_MAKE) make
+		cd ./libft_copy/ && make
 		$(CC) $(CFLAGS) -c $(SRC)
-		$(AR) $(NAME) $(OBJ) 
+		$(AR) $(NAME) $(OBJ) ./libft_copy/libft.a
+
+clean :
+		rm -f $(OBJ)
+		cd ./libft_copy/ && make clean
+
+fclean : clean
+		 rm -f $(NAME)
+		 cd ./libft_copy/ && make fclean
+
+re : fclean all
+
+.PHONY : all clean fclean re
