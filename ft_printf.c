@@ -6,14 +6,12 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:30:01 by yiwong            #+#    #+#             */
-/*   Updated: 2023/01/26 19:51:38 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/01/27 19:51:59 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdio.h>
+// #include <stdio.h>
+#include "libftprintf.h"
 
 int	ft_printf_s(char *s)
 {
@@ -25,7 +23,7 @@ int	ft_printf_s(char *s)
 	return (r);
 }
 
-int    ft_printf_base(unsigned int long long u, int len, char *set, int base)
+int	ft_printf_base(unsigned int long long u, int len, char *set, int base)
 {
     if (u == 0)
         return len;
@@ -99,9 +97,8 @@ int	ft_printf(const char *str, ...)
 // 	s = "Hello World. )OIWEFRUWISUHRGKLBSKUNCGFILUWERGjfldkuhgq3p894tgjrpur3pw84ugf. Yes.";
 // 	u = 4294967295;
 // 	x = 4294967295;
-
 // 	r1 = ft_printf("My test prints\ncharacter: %c\nstring: %s\npointer: %p\nint: %i\nunsigned int: %u\nlowerhex: %x\nupperhex: %X\npercent sign: %%\n\n", c, s, s, n, u, x, x);
-// 	r2 = printf("Standard prints\ncharacter: %c\nstring: %s\npointer: %p\nint: %i\nunsigned int: %u\nlowerhex: %x\nupperhex: %X\npercent sign: %%\n\n", c, s, s, n, u, x, x);
-// 	printf("%i, %i", r1, r2);
+// 	r2 = printf("Standard print\ncharacter: %c\nstring: %s\npointer: %p\nint: %i\nunsigned int: %u\nlowerhex: %x\nupperhex: %X\npercent sign: %%\n\n", c, s, s, n, u, x, x);
+// 	printf("ft_printf returns: %i\nprintf returns: %i\n", r1, r2);
 // 	return (0);
 // }
