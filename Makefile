@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 AR = ar rcs
 
-DEPS = libftprint.h ./libft_copy/libft.h
+DEPS = ft_print.h ./libft_copy/libft.h
 
 SRC = 	ft_printf.c \
 		./libft_copy/ft_is*.c \
