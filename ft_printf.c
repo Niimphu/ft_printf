@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:30:01 by yiwong            #+#    #+#             */
-/*   Updated: 2023/01/28 16:42:25 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/01/28 17:14:45 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_printf_s(char *s)
 	int	r;
 
 	r = 0;
+	if (!s)
+		return (ft_printf_s("(null)"));
 	while (*s)
 		r += write(1, s++, 1);
 	return (r);
@@ -25,8 +27,6 @@ int	ft_printf_s(char *s)
 
 int	ft_printf_int(int n, int len)
 {
-	char	c;
-
 	if (n == -2147483648)
 		return (ft_printf_s("-2147483648"));
 	if (n < 0)
@@ -34,12 +34,18 @@ int	ft_printf_int(int n, int len)
 		n *= -1;
 		len += write(1, "-", 1);
 	}
-	if (n == 0)
-		return (len);
+	if (n)
+		len = ft_printf_int(n / 10, ++len);
 	else
-		len = ft_printf_int(n / 10, len);
-	c = n % 10 + '0';
-	len += write(1, &c, 1);
+	{
+		if (len == 0)
+		{
+			ft_putchar_fd('0', 1);
+			return (1);
+		}
+		return (len);
+	}
+	ft_putchar_fd(n % 10 + '0', 1);
 	return (len);
 }
 
@@ -81,7 +87,7 @@ int	ft_printf_fmt(const char fmt, va_list *args)
 		return (ft_printf_base(va_arg(*args, unsigned int), \
 			0, "0123456789abcdef", 16));
 	if (fmt == 'X')
-		return (ft_printf_base(va_arg(*args, unsigned long long), \
+		return (ft_printf_base(va_arg(*args, unsigned int), \
 			0, "0123456789ABCDEF", 16));
 	ft_putchar_fd('%', 1);
 	return (1);
@@ -118,7 +124,7 @@ int	ft_printf(const char *str, ...)
 
 // 	c = 'c';
 // 	n = -2147483648;
-// 	s = "Hello World. )OIWEFRUWISUHRGKLBSKhgq3p894tgjrpur3pw84ugf. Yes.";
+// 	s = "Hello World. )OIWEFRUWISUHR\nKLBSKhgq3p894tgjrpur3pw84ugf. Yes.";
 // 	u = 4294967295;
 // 	x = 4294967295;
 // 	r1 = ft_printf("My print:\nc:%c\ns:%s\np:%p\nu:%u\n", c, s, NULL, u);
