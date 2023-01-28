@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINT_H
-# define LIBFTPRINT_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
 # include "libft_copy/libft.h"
 # include <stdlib.h>
