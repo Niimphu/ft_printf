@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 AR = ar rcs
 
-DEPS = ft_print.h ./libft_copy/libft.h
+DEPS = ft_print.h
 
 SRC = 	ft_printf.c \
 		./libft_copy/ft_is*.c \
@@ -31,7 +31,7 @@ SRC = 	ft_printf.c \
 		./libft_copy/ft_substr.c \
 		./libft_copy/ft_split.c
 
-OBJ = $(SRC:.c=.o) *.o
+OBJ = ./*.o *.o
 
 NAME = libftprintf.a
 
