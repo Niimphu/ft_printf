@@ -33,7 +33,7 @@ SRC = 	ft_printf.c \
 
 OBJ = $(SRC:.c=.o) *.o
 
-NAME = libftprint.a
+NAME = libftprintf.a
 
 all : $(NAME)
 

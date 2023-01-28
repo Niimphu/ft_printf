@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:30:01 by yiwong            #+#    #+#             */
-/*   Updated: 2023/01/28 01:19:02 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/01/28 01:26:36 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,10 +97,10 @@ int	ft_printf(const char *str, ...)
 // 	s = "Hello World. )OIWEFRUWISUHRGKLBSKhgq3p894tgjrpur3pw84ugf. Yes.";
 // 	u = 4294967295;
 // 	x = 4294967295;
-// 	r1 = ft_printf("c:%c\ns:%s\np:%p\nu:%u\ni:%i\nd:%d\nx:%x\nX:%X\n\n", \
-// 		c, s, s, u, n, n, x, x);
-// 	r2 = printf("c:%c\ns:%s\np:%p\nu:%u\ni:%i\nd:%d\nx:%x\nX:%X\n\n", \
-// 		c, s, s, u, n, n, x, x);
+// r1 = ft_printf("My print:\nc:%c\ns:%s\np:%p\nu:%u\n", c, s, s, u);
+// r1 += ft_printf("i:%i\nd:%d\nx:%x\nX:%X\n%%:%%\n\n", n, n, x, x);
+// r2 = printf("Standard:\nc:%c\ns:%s\np:%p\nu:%u\n", c, s, s, u);
+// r2 += printf("i:%i\nd:%d\nx:%x\nX:%X\n%%:%%\n\n", n, n, x, x);
 // 	printf("ft_printf returns: %i\nprintf returns: %i\n", r1, r2);
 // 	return (0);
 // }
